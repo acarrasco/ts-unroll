@@ -2,7 +2,7 @@
   "name": "ts-unroll",
   "version": "1.0.0",
   "description": "A type safe version of unroll",
-  "main": "index.js",
+  "main": "unroll.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/acarrasco/ts-unroll.git"
@@ -24,8 +24,24 @@
     "build:init": "npm install; rm -rf ./dist && mkdir -p ./dist/",
     "build:js": "[ ! -e main ] || tsc",
     "build:install": "mv node_modules node_modules_all; npm install --production --package-lock; cp -LR ./node_modules ./dist; rm -rf node_modules; mv node_modules_all node_modules",
-    "lint": "npx eslint main --ext .ts --config .eslintrc.js --no-eslintrc",
+    "lint": "npx eslint lib --ext .ts",
     "test:unit": "npx jest --coverage --testPathPattern=tests/.*unit\\.test",
-    "semantic-release": "npx semantic-release",
-  }
+    "semantic-release": "npx semantic-release"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
+    "eslint": "^6.7.1",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.0.4",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {}
 }
